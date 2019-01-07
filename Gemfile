@@ -64,3 +64,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bower-rails', "~> 0.11.0"
 gem 'rspec'
 gem 'rspec-mocks'
+gem 'pg'
