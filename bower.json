@@ -1,0 +1,17 @@
+{
+  "name": "app",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Rizqy Faishal <rizqy.tanjung@midtrans.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/rizqyfaishal27/test_rails",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
