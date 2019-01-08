@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+  root 'task#index'
 
-  root 'welcome#index'
+  resources :task
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

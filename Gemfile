@@ -65,3 +65,5 @@ gem 'bower-rails', "~> 0.11.0"
 gem 'rspec'
 gem 'rspec-mocks'
 gem 'pg'
+
+gem 'kaminari'

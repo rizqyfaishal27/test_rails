@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-push-2">
+                <h1>New Task</h1>
+
+                <%= form_with scope: :task, url: "/task", local: true do |form| %>
+                    <p>
+                        <%= form.label :name %><br>
+                        <%= form.text_field :name, placeholder: "Task name?", class: "form-control" %>
+                    </p>
+                    <p>
+                        <%= form.label :description %><br>
+                        <%= form.text_area :description, placeholder: "Description", class: "form-control" %>
+                    </p>
+
+                    <p id="change-fields">
+                        <%= form.text_field :changes, multiple: true, placeholder: "Change", class: "form-control" %><br><br>
+                    </p>
+
+                    <p>
+                        <button role="button" type="button" id="add-change">+</button>
+                    </p>
+                    <p>
+                        <%= form.submit %>
+                    </p>
+                <% end %>
+
+                <script>
+                    var changeFields = document.getElementById("change-fields");
+                    var changeFieldForm = changeFields.firstElementChild.cloneNode(true);
+                    console.log(changeFieldForm);
+                    var addChangeButton = document.getElementById("add-change");
+
+                    addChangeButton.addEventListener('click', function() {
+                        var changeFieldFormClone = changeFieldForm.cloneNode(true);
+                        changeFields.appendChild(changeFieldFormClone);
+                        changeFields.appendChild(document.createElement('br'));
+                        changeFields.appendChild(document.createElement('br'));
+                    });
+                </script>
+            </div>   
+        </div>
+    </div>
+</body>
+</html>

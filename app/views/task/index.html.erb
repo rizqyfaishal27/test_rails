@@ -1,0 +1,41 @@
+<html>
+    <head></head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>List of tasks</h1>
+                    <p>
+                        <%= link_to "Add Task", new_task_path, { class: "btn btn-primary" } %>
+                    </p>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td>Task name</td>
+                                <td>Description</td>
+                                <td>List of changes</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% @tasks.each do |task| %>
+                                <tr>
+                                    <td><%= task.name %></td>
+                                    <td><%= task.description %></td>
+                                    <td>
+                                        <ul>
+                                            <% task.change_set.each do | change | %>
+                                                <li>
+                                                    <%= change.text %>
+                                                </li>
+                                            <% end %>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            <% end %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
