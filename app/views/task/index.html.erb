@@ -14,6 +14,7 @@
                                 <td>Task name</td>
                                 <td>Description</td>
                                 <td>List of changes</td>
+                                <td>Actions</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -29,6 +30,11 @@
                                                 </li>
                                             <% end %>
                                         </ul>
+                                    </td>
+                                    <td>
+                                        <%= link_to "Edit", edit_task_path(task) %>
+                                        <%= link_to "Show", task_path(task) %>
+                                        <%= link_to "Delete", task_path(task), method: :delete, data: { confirm: "Are you sure?"} %>
                                     </td>
                                 </tr>
                             <% end %>

@@ -24,9 +24,9 @@ development:
 test:
   adapter: postgresql
   database: test_rails_test
-  host: <%= ENV['POSTGRES_HOST'] %>
-  username: <%= ENV['POSTGRES_USERNAME'] %>
-  password: <%= ENV['POSTGRES_PASSWORD'] %>
+  host: localhost
+  username: postgres
+  password: asdasd123
   
 production:
   <<: *default

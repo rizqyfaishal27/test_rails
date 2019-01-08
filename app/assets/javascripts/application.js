@@ -14,5 +14,6 @@
 //= require activestorage
 //= require turbolinks
 //= require bootstrap/dist/js/bootstrap.js
+//= require jquery/dist/jquery.js
 //= require_tree .
 

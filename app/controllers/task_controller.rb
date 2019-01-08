@@ -4,28 +4,47 @@ class TaskController < ApplicationController
     end
 
     def new 
-
+        @task = Task.new
     end
 
     def create
         Task.transaction do 
             @task = Task.create(name: task_params[:name], description: task_params[:description])
-            saved_task = @task.save!
-
-            task_params[:changes].each do |change_text|
-                @change = Change.create(text: change_text, task_id: @task.id)
-                @change.save!
-            end
-
-            if saved_task
+            if @task.save
+                task_params[:changes].each do |change_text|
+                    @change = Change.create(text: change_text, task_id: @task.id)
+                    @change.save!
+                end
                 redirect_to @task
             else
-                render new_article_path
+                render 'new'
             end
         end
     end
 
     def show
+        @task = Task.find(params[:id])
+    end
+
+    def destroy
+        @task = Task.find(params[:id])
+
+        @task.destroy
+
+        redirect_to task_index_path
+    end
+
+    def update
+        @task = Task.find(params[:id])
+
+        if @task.update(task_params)
+            redirect_to task_path
+        else
+            render 'edit'
+        end
+    end
+
+    def edit
         @task = Task.find(params[:id])
     end
 
