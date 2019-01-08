@@ -3,6 +3,6 @@
   "private": true,
   "dependencies": {},
   "scripts": {
-  	"postinstall": "bower install"
+  	"preinstall": "bower install"
   }
 }
