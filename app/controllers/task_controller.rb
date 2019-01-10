@@ -1,6 +1,10 @@
 class TaskController < ApplicationController
+    before_action :authenticate_user!
+
     def index
         @tasks = Task.all
+        @user = current_user
+
     end
 
     def new 
@@ -24,6 +28,10 @@ class TaskController < ApplicationController
 
     def show
         @task = Task.find(params[:id])
+    end
+
+    def delete
+
     end
 
     def destroy

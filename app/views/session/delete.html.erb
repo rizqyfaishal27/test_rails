@@ -1,0 +1,5 @@
+<% if current_user %>
+	<%= form_with scope: :session, url: '/logout', method: 'DELETE', local: true do |f| %>
+		<%= f.submit 'logout' %>
+	<% end %>
+<% end %>
